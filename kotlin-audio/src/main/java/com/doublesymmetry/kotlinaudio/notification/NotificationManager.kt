@@ -588,14 +588,14 @@ class NotificationManager internal constructor(
                             }
                         }
                     }
-                internalNotificationManager.setUseChronometer(false)
-                internalNotificationManager.build()
+                internalNotificationManager?.setUseChronometer(false)
+                internalNotificationManager?.build()
                 internalNotificationManager.apply {
                         setMediaSessionToken(mediaSession.sessionToken)
                         setPlayer(player)
                     }
         }
-        internalNotificationManager.setUseChronometer(false)
+        internalNotificationManager?.setUseChronometer(false)
         setupInternalNotificationManager(config)
     }
 
