@@ -587,11 +587,15 @@ class NotificationManager internal constructor(
                                 else -> {}
                             }
                         }
-                    }.build().apply {
+                    }
+                internalNotificationManager.setUseChronometer(false)
+                internalNotificationManager.build()
+                internalNotificationManager.apply {
                         setMediaSessionToken(mediaSession.sessionToken)
                         setPlayer(player)
                     }
         }
+        internalNotificationManager.setUseChronometer(false)
         setupInternalNotificationManager(config)
     }
 
