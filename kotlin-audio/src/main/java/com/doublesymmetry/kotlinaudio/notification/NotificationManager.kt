@@ -96,7 +96,6 @@ class NotificationManager internal constructor(
         }
     }
 
-    private var internalNotificationManager: PlayerNotificationManager? = null
     private val scope = MainScope()
     private val buttons = mutableSetOf<NotificationButton?>()
     private var invalidateThrottleCount = 0
@@ -218,6 +217,7 @@ class NotificationManager internal constructor(
             else player.getMediaItemAt(index)
         return RatingCompat.fromRating(mediaItem?.mediaMetadata?.userRating)
     }
+    var internalNotificationManager: PlayerNotificationManager? = null
 
     var showPlayPauseButton = false
         set(value) {
