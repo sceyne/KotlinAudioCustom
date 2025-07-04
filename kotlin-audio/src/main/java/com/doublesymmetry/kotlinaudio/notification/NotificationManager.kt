@@ -538,6 +538,7 @@ class NotificationManager internal constructor(
         showPreviousButton = false
         showStopButton = false
         if (internalNotificationManager == null) {
+            println("is null. message")
             internalNotificationManager =
                 PlayerNotificationManager.Builder(context, NOTIFICATION_ID, CHANNEL_ID)
                     .apply {
@@ -704,6 +705,7 @@ class NotificationManager internal constructor(
     }
 
     private fun setupInternalNotificationManager(config: NotificationConfig) {
+        println("other message")
         internalNotificationManager?.run {
             setColor(config.accentColor ?: Color.TRANSPARENT)
             setUseChronometer(false)
