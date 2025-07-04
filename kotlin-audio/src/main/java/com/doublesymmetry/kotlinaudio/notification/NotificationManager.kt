@@ -539,12 +539,14 @@ class NotificationManager internal constructor(
         showStopButton = false
         if (internalNotificationManager == null) {
             internalNotificationManager =
-                PlayerNotificationManager?.Builder(context, NOTIFICATION_ID, CHANNEL_ID)
+                PlayerNotificationManager.Builder(context, NOTIFICATION_ID, CHANNEL_ID)
                     .apply {
                         setChannelNameResourceId(R.string.playback_channel_name)
                         setMediaDescriptionAdapter(descriptionAdapter)
                         setCustomActionReceiver(customActionReceiver)
                         setNotificationListener(this@NotificationManager)
+                        setUseChronometer(false)
+                        setUseProgressBar(false)
 
                         for (button in buttons) {
                             if (button == null) continue
@@ -587,19 +589,11 @@ class NotificationManager internal constructor(
                                 else -> {}
                             }
                         }
-                    }
-                val manager = internalNotificationManager
-                if (manager != null) {
-                    manager.setUseChronometer(false)
-                    manager.build()
-                    manager.apply {
+                    }.build().apply {
                         setMediaSessionToken(mediaSession.sessionToken)
                         setPlayer(player)
                     }
-                }
-                
         }
-        internalNotificationManager?.setUseChronometer(false)
         setupInternalNotificationManager(config)
     }
 
