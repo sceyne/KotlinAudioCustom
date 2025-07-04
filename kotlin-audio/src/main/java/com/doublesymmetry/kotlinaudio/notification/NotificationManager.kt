@@ -706,6 +706,7 @@ class NotificationManager internal constructor(
     private fun setupInternalNotificationManager(config: NotificationConfig) {
         internalNotificationManager?.run {
             setColor(config.accentColor ?: Color.TRANSPARENT)
+            setUseChronometer(false)
             config.smallIcon?.let { setSmallIcon(it) }
             for (button in buttons) {
                 if (button == null) continue
