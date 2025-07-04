@@ -40,6 +40,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import okhttp3.Headers
 import okhttp3.Headers.Companion.toHeaders
+import android.util.Log
 
 class NotificationManager internal constructor(
     private val context: Context,
@@ -538,7 +539,7 @@ class NotificationManager internal constructor(
         showPreviousButton = false
         showStopButton = false
         if (internalNotificationManager == null) {
-            println("is null. message")
+            Log.i("YourModuleName", "is null. message")
             internalNotificationManager =
                 PlayerNotificationManager.Builder(context, NOTIFICATION_ID, CHANNEL_ID)
                     .apply {
@@ -705,7 +706,7 @@ class NotificationManager internal constructor(
     }
 
     private fun setupInternalNotificationManager(config: NotificationConfig) {
-        println("other message")
+        Log.i("YourModuleName", "INTERNALMANAGERSETUP");
         internalNotificationManager?.run {
             setColor(config.accentColor ?: Color.TRANSPARENT)
             setUseChronometer(false)
