@@ -545,8 +545,6 @@ class NotificationManager internal constructor(
                         setMediaDescriptionAdapter(descriptionAdapter)
                         setCustomActionReceiver(customActionReceiver)
                         setNotificationListener(this@NotificationManager)
-                        setUseChronometer(false)
-                        setUseProgressBar(false)
 
                         for (button in buttons) {
                             if (button == null) continue
@@ -592,6 +590,8 @@ class NotificationManager internal constructor(
                     }.build().apply {
                         setMediaSessionToken(mediaSession.sessionToken)
                         setPlayer(player)
+                        setUseChronometer(false)
+                        setUseProgressBar(false)
                     }
         }
         setupInternalNotificationManager(config)
