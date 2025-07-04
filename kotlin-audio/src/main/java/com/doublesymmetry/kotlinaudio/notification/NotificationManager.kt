@@ -591,7 +591,6 @@ class NotificationManager internal constructor(
                         setMediaSessionToken(mediaSession.sessionToken)
                         setPlayer(player)
                         setUseChronometer(false)
-                        setUseProgressBar(false)
                     }
         }
         setupInternalNotificationManager(config)
