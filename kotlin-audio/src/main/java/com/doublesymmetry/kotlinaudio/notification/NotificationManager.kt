@@ -201,7 +201,7 @@ class NotificationManager internal constructor(
         }
     }
 
-    private fun getDuration(index: Int? = null): Long? {
+    /**private fun getDuration(index: Int? = null): Long? {
         val mediaItem = if (index == null) player.currentMediaItem
             else player.getMediaItemAt(index)
 
@@ -210,7 +210,12 @@ class NotificationManager internal constructor(
         } else {
             overrideAudioItem?.duration ?: player.duration
         }
-    }
+    }*/
+
+    private fun getDuration(index: Int? = null): Long? {
+    // Always return C.TIME_UNSET to hide duration & progress bar
+    return C.TIME_UNSET
+}
 
     private fun getUserRating(index: Int? = null): RatingCompat? {
         val mediaItem = if (index == null) player.currentMediaItem
