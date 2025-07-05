@@ -522,11 +522,11 @@ class NotificationManager internal constructor(
      * method again with a different configuration to update the notification.
      */
     fun createNotification(config: NotificationConfig) = scope.launch {
-        if (isNotificationButtonsChanged(config.buttons)) {
-            hideNotification()
-        }
+        //if (isNotificationButtonsChanged(config.buttons)) {
+        hideNotification()
+        //}
 
-        buttons.apply {
+       /** buttons.apply {
             clear()
             addAll(config.buttons)
         }
@@ -601,7 +601,7 @@ class NotificationManager internal constructor(
                         setUseChronometer(false)
                     }
         }
-        setupInternalNotificationManager(config)
+        setupInternalNotificationManager(config)*/
     }
 
     private fun isNotificationButtonsChanged(newButtons: List<NotificationButton>): Boolean {
