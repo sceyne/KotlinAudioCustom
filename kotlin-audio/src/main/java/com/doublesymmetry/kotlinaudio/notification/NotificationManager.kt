@@ -61,8 +61,9 @@ class NotificationManager internal constructor(
         }
 
         override fun getCurrentContentText(player: Player): CharSequence? {
-            return getArtist() ?: ""
-        }
+        // Return null or empty to hide subtitle (which sometimes contains elapsed time/duration)
+            return null
+    }
 
         override fun getCurrentSubText(player: Player): CharSequence? {
             return player.mediaMetadata.displayTitle
