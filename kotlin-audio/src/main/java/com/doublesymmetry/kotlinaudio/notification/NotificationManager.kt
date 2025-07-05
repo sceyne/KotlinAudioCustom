@@ -401,9 +401,9 @@ class NotificationManager internal constructor(
             getGenre()?.let {
                 putString(MediaMetadataCompat.METADATA_KEY_GENRE, it)
             }
-            getDuration()?.let {
-                putLong(MediaMetadataCompat.METADATA_KEY_DURATION, it)
-            }
+            //getDuration()?.let {
+            //    putLong(MediaMetadataCompat.METADATA_KEY_DURATION, it)
+            //}
             getArtworkUrl()?.let {
                 putString(MediaMetadataCompat.METADATA_KEY_ART_URI, it)
             }
