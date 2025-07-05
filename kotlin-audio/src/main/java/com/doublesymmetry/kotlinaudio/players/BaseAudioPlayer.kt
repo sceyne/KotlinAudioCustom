@@ -123,10 +123,11 @@ abstract class BaseAudioPlayer internal constructor(
         }
 
     val duration: Long
-        get() {
-            return if (exoPlayer.duration == C.TIME_UNSET) 0
-            else exoPlayer.duration
-        }
+        //get() {
+        //    return if (exoPlayer.duration == C.TIME_UNSET) 0
+        //    else exoPlayer.duration
+        //}
+        get() = 0L
 
     val isCurrentMediaItemLive: Boolean
         get() = exoPlayer.isCurrentMediaItemLive
@@ -134,10 +135,11 @@ abstract class BaseAudioPlayer internal constructor(
     private var oldPosition = 0L
 
     val position: Long
-        get() {
-            return if (exoPlayer.currentPosition == C.POSITION_UNSET.toLong()) 0
-            else exoPlayer.currentPosition
-        }
+        //get() {
+        //    return if (exoPlayer.currentPosition == C.POSITION_UNSET.toLong()) 0
+        //    else exoPlayer.currentPosition
+        //}
+        get() = 0L
 
     val bufferedPosition: Long
         get() {
